@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { Button } from "@material-ui/core";
 
@@ -70,10 +70,6 @@ const ColumnRight = styled.div`
 `;
 
 const AboutSection = ({ heading, paragraphOne, paragraphTwo, image }) => {
-  const history = useHistory();
-  const NavigateToAbout = () => {
-    history.push("/about");
-  };
   return (
     <Section>
       <Container>
@@ -81,8 +77,8 @@ const AboutSection = ({ heading, paragraphOne, paragraphTwo, image }) => {
           <h1>{heading}</h1>
           <p>{paragraphOne}</p>
           <p>{paragraphTwo}</p>
-          <Button style={{ background: "#00cd95" }} onClick={NavigateToAbout}>
-            READ MORE
+          <Button style={{ background: "#00cd95" }}>
+            <Link to="/about">READ MORE</Link>
           </Button>
         </ColumnLeft>
         <ColumnRight>

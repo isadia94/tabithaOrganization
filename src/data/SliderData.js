@@ -1,7 +1,7 @@
-import don1 from "../images/don1.jpeg";
+import don1 from "../images/don1.jpg";
 
-import happinness from "../images/happinness.jpeg";
-import don2 from "../images/don2.jpeg";
+import happinness from "../images/happinness.jpg";
+import don2 from "../images/don2.jpg";
 
 export const SliderData = [
   {

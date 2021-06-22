@@ -23,6 +23,7 @@ const HeroSlide = styled.div`
   z-index: 1;
   width: 100%;
   height: 100%;
+  transition: 2s ease-in-out;
 `;
 const HeroSlider = styled.div`
   position: absolute;
@@ -33,8 +34,6 @@ const HeroSlider = styled.div`
   display: flex;
   align-items: center;
   overflow: hidden;
-
-  transition: 0.3s ease-in-out;
 
   &::before {
     content: "";
@@ -78,7 +77,6 @@ h1{
 
   @media screen and (max-width:768px){
     font-size: 2rem;
-    
     line-height:40px;
     width:300px;
   }
