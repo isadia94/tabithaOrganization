@@ -5,6 +5,8 @@ import aboutSide from "../images/about-aside.jpg";
 import { Button } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 import visionImage from "../images/vision.jpg";
+import LeaderShip from "../images/leadership.jpg";
+import { TeamData } from "../data/TeamData";
 
 const AboutContainer = styled.div`
   width: 100%;
@@ -144,6 +146,7 @@ const Vision = styled.div`
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   grid-template-rows: 550px;
+  margin-bottom: 100px;
 `;
 const VisionImage = styled.div`
   background-image: url(${visionImage});
@@ -182,6 +185,79 @@ const VisionText = styled.div`
   }
 `;
 
+const LeaderShipContainer = styled.div`
+  height: 500px;
+  background-image: url(${LeaderShip});
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  padding: 4rem 4rem;
+  color: white;
+  margin-bottom: 100px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    opacity: 0.56;
+  }
+`;
+const LeaderShipTitle = styled.div`
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 300;
+    font-size: 3rem;
+
+    span {
+      font-size: 4rem;
+      font-weight: 700;
+    }
+  }
+`;
+const LeaderShipCardContainer = styled.div`
+  width: 100%;
+  backround: yellow;
+
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+`;
+const LeaderShipCard = styled.div`
+  h3 {
+    font-size: 1rem;
+    text-align: center;
+    border-bottom: 1px solid black;
+    margin-bottom: 5px;
+  }
+  h4 {
+    text-align: center;
+  }
+`;
+
+const LeaderShipText = styled.div`
+  background: white;
+  color: black;
+  padding: 10px 10px;
+  margin-top: -7px;
+`;
+const ImgCard = styled.img`
+  height: 220px;
+  width: 220px;
+  object-fit: cover;
+`;
 const About = () => {
   const history = useHistory();
 
@@ -281,6 +357,24 @@ const About = () => {
           </h3>
         </VisionText>
       </Vision>
+      <LeaderShipContainer>
+        <LeaderShipTitle>
+          <h2>
+            OUR<br></br> <span>LEADERSHIP</span>
+          </h2>
+        </LeaderShipTitle>
+        <LeaderShipCardContainer>
+          {TeamData.map((item, idx) => (
+            <LeaderShipCard>
+              <ImgCard src={item.image} />
+              <LeaderShipText>
+                <h3>{item.name}</h3>
+                <h4>{item.title}</h4>
+              </LeaderShipText>
+            </LeaderShipCard>
+          ))}
+        </LeaderShipCardContainer>
+      </LeaderShipContainer>
     </>
   );
 };

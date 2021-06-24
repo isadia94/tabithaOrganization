@@ -1,0 +1,19 @@
+.portfolio {
+  height: 90vh;
+  width: 100%;
+  color: white;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio > h1 {
+  font-size: 4rem;
+}
+
+@media screen and (max-width: 768px) {
+  .portfolio > h1 {
+    font-size: 2rem;
+  }
+}
