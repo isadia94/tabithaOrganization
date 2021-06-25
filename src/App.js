@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
+import ContactSection from "./Components/ContactSection";
 function App() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/about" component={About} />
         <Route path="/portfolio" component={Portfolio} />
       </Switch>
+      <ContactSection />
     </div>
   );
 }

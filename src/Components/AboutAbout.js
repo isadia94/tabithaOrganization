@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import aboutSide from "../images/about-aside.jpg";
+import img5 from "../images/img5.jpeg";
 import { Button } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 const AboutIntroContainer = styled.div`
@@ -46,7 +46,7 @@ const LineEffect = styled.div`
   }
 `;
 const IntroImage = styled.div`
-  background-image: url(${aboutSide});
+  background-image: url(${img5});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -78,6 +78,28 @@ const AboutIntro = styled.div`
     text-align: center;
   }
 `;
+
+const ImageText = styled.div`
+  color: white;
+
+  h3 {
+    position: absolute;
+    top: 60%;
+    left: -15%;
+    z-index: 10000;
+    transform: rotate(-90deg);
+    font-size: 4.8rem;
+  }
+
+  h4 {
+    position: absolute;
+    top: 76%;
+    font-size: 4.8rem;
+    font-weight: 200;
+    left: 20%;
+  }
+`;
+
 function AboutAbout() {
   const history = useHistory();
 
@@ -134,7 +156,12 @@ function AboutAbout() {
           </Button>
         </AboutIntro>
       </IntroText>
-      <IntroImage></IntroImage>
+      <IntroImage>
+        <ImageText>
+          <h3>ABOUT</h3>
+          <h4>US</h4>
+        </ImageText>
+      </IntroImage>
     </AboutIntroContainer>
   );
 }

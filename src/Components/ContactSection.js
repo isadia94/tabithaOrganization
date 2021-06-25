@@ -51,7 +51,7 @@ const NavigationLinks = styled.div`
   margin-bottom: 2rem;
 
   h3 {
-    margin-bottom: 3rem;
+    margin-bottom: 5.5rem;
   }
 `;
 const NavMenuLinks = styled(Link)`
